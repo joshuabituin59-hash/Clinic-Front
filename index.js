@@ -10,7 +10,9 @@ submit.addEventListener('click', () => {
     let medical_condition = document.querySelector("#medical_condition").value;
     let formData={fullname, age, contact_number, medical_condition};
 
-    fetch('https://clinic-back-t14l.onrender.com/api/add', {
+    if (fullname && age && contact_number && medical_condition) {
+
+            fetch('https://clinic-back-t14l.onrender.com/api/add', {
         method: 'POST',
         body: JSON.stringify(formData), 
         headers: {
@@ -21,6 +23,9 @@ submit.addEventListener('click', () => {
     })
     alert("Appointment Added Successfully");
     location.reload();
+    }
+
+
 });
 
 window.addEventListener('load', () => {
