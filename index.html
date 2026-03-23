@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dbd9d9;
+        }
+    </style>
+    <title>Clinic Appointment Scheduling</title>
+</head>
+<body class="w-screen h-full">
+    <h1 class="text-center text-blue-800 text-4xl m-4 font-bold">Clinic Appointment Scheduling</h1>
+    <div id="container" class="flex justify-center">
+        <div id="form" class="border-2 border-blue-800 rounded-lg w-50% px-4 py-2">
+            <div class="w-full">
+                <div class="flex justify-center gap-4">
+                    <label for="">Full name: </label>
+                    <input type="text" name="Fullname" id="fullname" class="border-b border-blue-600"><br>
+
+                    <label for="">Age:</label>
+                    <input type="text" name="Age" id="age" class="border-b border-blue-600"><br>
+                </div>
+            
+                <div">
+                    <label for="">Contact number:</label>
+                    <input type="text" name="contact_number" id="contact_number" class=" border-b border-blue-600 w-55 ml-3">
+
+                    <label for="" class="ml-7">Medical condition</label>
+                    <input type="text" name="medical_condition" id="medical_condition" class=" border-b border-blue-600 w-55 ml-3">
+                </div>
+            
+
+                <div class="flex justify-end gap-3">
+                    <button id="add" class="border-blue-800 border rounded-lg px-2 mt-4 w-40 hover:bg-blue-800 hover:text-white"> Add appointment</button>
+                    <button id="update" class="border-blue-800 border rounded-lg px-2 mt-4 w-40 hover:bg-blue-800 hover:text-white"> Update</button>
+                    <input type="hidden" id="ID">
+                </div>
+            
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="mt-6 px-20  overflow-y-auto h-screen flex justify-center">
+        <table class="table-auto border-spacing-0 border-2 border-blue-800 h-1/2">
+            <thead class="sticky top-0 z-10">
+                <tr class="bg-blue-900">
+                    <th class="p-3 text-left text-white">Full name</th>
+                    <th class="p-3 text-left text-white">Age</th>
+                    <th class="p-3 text-left text-white">Contact number</th>
+                    <th class="p-3 text-left text-white">Medical condition</th>
+                    <th class="p-3 text-left text-white">Action</th>
+                </tr>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+    </div>
+
+    <!-- <ul id="content">
+        
+    </ul> -->
+
+
+        <script src="index.js"></script>
+</body>
+</html>
